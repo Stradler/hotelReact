@@ -1,7 +1,13 @@
 import * as  React from 'react';
-import {Props} from "../containers/Table";
+import {TableProps} from "../containers/Table";
 
-const Table: React.SFC<Props> = ({week}) => {
+export interface DateName {
+    name: string;
+}
+
+const TableTh: React.SFC<DateName> = ({name}) => <th>{name}</th>
+
+const Table: React.SFC<TableProps> = ({week}) => {
     return (
         <table>
             <caption>Бронирование комнат отеля v0.0001 </caption>
@@ -9,7 +15,7 @@ const Table: React.SFC<Props> = ({week}) => {
                 <tr>
                     <th>Название комнаты</th>
                     {week.map(day => (
-                        <th>{day}</th>
+                        <TableTh name={day} />
                     ))}
                 </tr>
             </thead>

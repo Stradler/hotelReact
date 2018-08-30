@@ -1,13 +1,13 @@
 import {connect} from "react-redux";
 import Table from "../components/Table";
 
-export interface Props {
+export interface TableProps {
     week: string[]
 }
 
 
 
-const mapStateToProps = ({week}: Props) => {
+const mapStateToProps = ({week}: TableProps) => {
     return {
       week
     }

@@ -1,6 +1,6 @@
 import * as  React from 'react';
 import {TableProps} from "../containers/Table";
-
+import "./Table.css";
 export interface DateName {
     name: string;
 }
@@ -10,12 +10,12 @@ const TableTh: React.SFC<DateName> = ({name}) => <th>{name}</th>
 const Table: React.SFC<TableProps> = ({week}) => {
     return (
         <table>
-            <caption>Бронирование комнат отеля v0.0001 </caption>
+            <caption className="table-caption">Бронирование комнат отеля v0.0001 </caption>
             <thead>
                 <tr>
-                    <th>Название комнаты</th>
+                    <TableTh name="Название комнаты:" />
                     {week.map(day => (
-                        <TableTh name={day} />
+                        <TableTh key={day} name={day} />
                     ))}
                 </tr>
             </thead>

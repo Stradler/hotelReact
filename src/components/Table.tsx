@@ -19,6 +19,9 @@ const Table: React.SFC<TableProps> = ({week}) => {
                     ))}
                 </tr>
             </thead>
+            <tbody>
+                
+            </tbody>
 
         </table>
     );

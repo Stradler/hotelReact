@@ -1,4 +1,8 @@
-td {
+.table-caption {
+    margin-bottom: 50px;
+}
+
+/* td {
     width: 90px;
     height: 50px;
     margin-right: 10px;
@@ -11,4 +15,4 @@ td {
   
   .green {
     background-color: green;
-  }
+  } */

@@ -5,16 +5,16 @@
 1. Clone [This Repo(can copy this link)](https://github.com/Stradler/hotelReact.git) To Your Computer
 2. In The Root Directory Install Required Packages and Typings:
   Using **npm**: 
-          ```console
-            foo@bar:~$ npm install
-          ```
-  Using**yarn**:
-          ```console
-            foo@bar:~$ yarn install
-          ```
+```console
+foo@bar:~$ npm install
+```
+  Using **yarn**:
+```console
+foo@bar:~$ yarn install
+```
 3. Run In Root Directory (be sure, that port 3000 is open)
-          ```shell
-          yarn start
-          npm start
-          ```
+```console
+foo@bar:~$ yarn start
+foo@bar:~$ npm start
+```
 4. App will be ran on http://localhost/3000

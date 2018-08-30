@@ -1,5 +1,5 @@
 # Simple Hotel Booking
-[This App](https://github.com/Stradler/stazhirovkaViron/tree/master/3.hotelrooms) implementation on [![react icon](https://www.qualium-systems.com/wp-content/uploads/2015/07/icon-reactjs.svg)](https://reactjs.org/) [![redux icon](https://cdn-images-1.medium.com/max/1200/0*U2DmhXYumRyXH6X1.png)](https://redux.js.org/) [![typescript icon](http://www.typescriptlang.org/assets/images/icons/apple-touch-icon-180x180.png)](http://www.typescriptlang.org/)
+[This App](https://github.com/Stradler/stazhirovkaViron/tree/master/3.hotelrooms) implementation on [![react icon](https://www.qualium-systems.com/wp-content/uploads/2015/07/icon-reactjs.svg)](https://reactjs.org/)  [![typescript icon](http://www.typescriptlang.org/assets/images/icons/apple-touch-icon-180x180.png)](http://www.typescriptlang.org/) and [redux](https://redux.js.org/)
 
 ## Usage:
 1. Clone [This Repo(can copy this link)](https://github.com/Stradler/hotelReact.git) To Your Computer

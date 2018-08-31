@@ -7,7 +7,7 @@ import reducer from "./reducers";
 import {createStore} from "redux";
 import { Provider } from "react-redux";
 
-const store = createStore(reducer);
+export const store = createStore(reducer);
 
 ReactDOM.render(
   <Provider store={store}>
@@ -16,3 +16,41 @@ ReactDOM.render(
   document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();
+
+/*
+
+  odm (mocking) {
+    Room: {
+        name,
+        _id,
+        bookedDays: [{
+            day: booked?,
+            idofbookedguy
+        }]
+    }
+  }
+
+  storeState: {
+    week,
+    rooms: [id1, id2]
+    addMode,
+    bookedRooms: {
+        id1(ofroom): {
+            nameofroom,
+            0: {
+              booked: boolean;
+              // can expand i guess
+            }
+        },
+        id2(ofroom): {
+            nameofroom,
+            0: {
+              booked: boolean;
+              // can expand i guess
+            }
+        }
+    }
+
+  }
+*/
+

@@ -1,4 +1,4 @@
-function generateWeek(): string[]{
+export function generateWeek(): string[]{
     const today: Date = new Date();
     const week: string[] = [];
     for (let i: number = 0; i < 7; i += 1) {

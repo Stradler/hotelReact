@@ -1,7 +1,7 @@
 import * as  React from 'react';
 import {TableProps} from "../containers/Table";
 import "./Table.css";
-import TableRow from "./TableRow";
+import TableRow from "../containers/TableRow";
 export interface DateName {
     name: string;
 }
@@ -25,6 +25,7 @@ const Table: React.SFC<TableProps> = ({week}) => {
                   - Based on each room booked days in store generate bunch
                      of rows
                   - Add container row and component row I guess
+                  
                 */}
                 <TableRow />
             </tbody>

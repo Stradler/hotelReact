@@ -1,8 +1,8 @@
 import {combineReducers} from "redux";
 import {week} from "./week";
-import {bookedRooms} from "./bookedRooms";
+import {bookedRoom} from "./bookedRooms";
 
 export default combineReducers({
     week,
-    bookedRooms
+    bookedRoom
 });

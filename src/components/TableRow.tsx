@@ -1,15 +1,15 @@
 import * as React from "react";
 import "./TableRow.css";
-import {Rooms} from "../reducers/bookedRooms";
+import {RoomState} from "../containers/TableRow";
 
 
 //пропсами в TableRow отправлять набор для этой комнаты
 
-const TableRow:React.SFC<Rooms> = ({bookedRooms}) => {
+const TableRow:React.SFC<RoomState> = ({bookedRoom}) => {
     return(
         <tr>
-          <td>{bookedRooms.name}</td>
-          <td>{bookedRooms.day}</td>
+          <td>{bookedRoom.name}</td>
+          <td>{bookedRoom.day}</td>
         </tr>
     );
 }

@@ -3,20 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/chai": "^4.1.4",
+    "@types/mocha": "^5.2.5",
     "@types/react-redux": "^6.0.6",
     "@types/shortid": "^0.0.29",
+    "chai": "^4.1.2",
+    "jest": "^23.5.0",
+    "mocha": "^5.2.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-redux": "^5.0.7",
     "react-scripts-ts": "2.17.0",
     "redux": "^4.0.0",
     "shortid": "^2.2.13",
+    "ts-jest": "^23.1.4",
+    "ts-node": "^7.0.1",
     "typesafe-actions": "^2.0.4"
   },
   "scripts": {
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
+    "helpersTest": "jest",
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {

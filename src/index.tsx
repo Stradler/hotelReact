@@ -39,6 +39,8 @@ registerServiceWorker();
             nameofroom,
             0: {
               booked: boolean;
+              day
+              number
               // can expand i guess
             }
         },
@@ -46,6 +48,8 @@ registerServiceWorker();
             nameofroom,
             0: {
               booked: boolean;
+              day
+              number
               // can expand i guess
             }
         }

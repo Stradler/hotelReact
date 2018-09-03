@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@types/chai": "^4.1.4",
-    "@types/mocha": "^5.2.5",
     "@types/react-redux": "^6.0.6",
     "@types/shortid": "^0.0.29",
     "chai": "^4.1.2",

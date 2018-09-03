@@ -17,6 +17,8 @@ ReactDOM.render(
 );
 registerServiceWorker();
 
+console.log(store.getState());
+
 /*
 
   odm (mocking) {

@@ -1,15 +1,20 @@
 import {connect} from "react-redux";
 import Table from "../components/Table";
+import {Rooms} from "../helpers/generateRooms";
 
 export interface TableProps {
-    week: string[]
+    week: string[];
+    rooms: string[];
+    bookedRooms: Rooms;
 }
 
 
 
-const mapStateToProps = ({week}: TableProps) => {
+const mapStateToProps = ({week, rooms, bookedRooms}: TableProps) => {
     return {
-      week
+      week,
+      rooms,
+      bookedRooms
     }
   } 
 

@@ -3,19 +3,18 @@ export interface RoomType {
     count: number;
 }
 
-export interface Room {
+export interface Rooms {
     [x: string] : RoomProp;
 }
 
 export interface RoomProp {
     name: string;
-    [x: number]: BookedDayProp;
+    bookedDays: BookedDayProp[];
 }
 
 export interface BookedDayProp {
     booked: boolean;
     day: string;
-    number: number;
 }
 
 
@@ -24,7 +23,7 @@ import {generateWeek, generateBoolean} from "./misc";
 
 
 //initialize random data, mockin retrieving them from api
-export function generateRooms(number: number): Room{
+export function generateRooms(number: number): Rooms{
     const week: string[] = generateWeek();
     const roomNames: string[] = generateRoomNames(number);
     const rooms = {};
@@ -41,12 +40,11 @@ export function generateRooms(number: number): Room{
 
 export function generateRoom(name: string, week: string[]): RoomProp{
     const weekLength:number = 7;
-    const room = {name};
+    const room:  RoomProp = {name, bookedDays: []};
     for(let i = 0; i < weekLength; i++){
-        room[i] = {
+        room.bookedDays[i] = {
             booked: generateBoolean(),
-            day: week[i],
-            number: i
+            day: week[i]
         }
     }
     return room;

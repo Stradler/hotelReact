@@ -4,9 +4,11 @@
   "private": true,
   "dependencies": {
     "@types/chai": "^4.1.4",
+    "@types/classnames": "^2.2.6",
     "@types/react-redux": "^6.0.6",
     "@types/shortid": "^0.0.29",
     "chai": "^4.1.2",
+    "classnames": "^2.2.6",
     "jest": "^23.5.0",
     "mocha": "^5.2.0",
     "react": "^16.4.2",

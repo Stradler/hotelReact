@@ -22,7 +22,7 @@ const Table: React.SFC<TableProps> = ({week, rooms, bookedRooms}) => {
             </thead>
             <tbody>
                 {rooms.map(room => (
-                    <TableRow key={room} {...bookedRooms[room]}/>
+                    <TableRow key={room} {...bookedRooms[room]} week={week}/>
                 ))}
             </tbody>
         </table>

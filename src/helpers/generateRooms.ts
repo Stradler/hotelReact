@@ -9,12 +9,11 @@ export interface Rooms {
 
 export interface RoomProp {
     name: string;
-    bookedDays: BookedDayProp[];
+    bookedDays: BookedDayProp;
 }
 
 export interface BookedDayProp {
-    booked: boolean;
-    day: string;
+    [x: string]: boolean;
 }
 
 
@@ -40,12 +39,9 @@ export function generateRooms(number: number): Rooms{
 
 export function generateRoom(name: string, week: string[]): RoomProp{
     const weekLength:number = 7;
-    const room:  RoomProp = {name, bookedDays: []};
+    const room:  RoomProp = {name, bookedDays: {}};
     for(let i = 0; i < weekLength; i++){
-        room.bookedDays[i] = {
-            booked: generateBoolean(),
-            day: week[i]
-        }
+        room.bookedDays[week[i]] = generateBoolean()
     }
     return room;
 }

@@ -11,7 +11,7 @@ export interface TableProps {
 }
 
 export interface DispatchProps {
-  handleDayClick: (id: string, dayIndex: number) => void;
+  handleDayClick: (id: string, dayIndex: string) => void;
 }
 
 
@@ -25,7 +25,7 @@ const mapStateToProps = ({week, rooms, bookedRooms}: TableProps) => {
   } 
 
 const mapDispatchToProps = (dispatch: Redux.Dispatch<Click_Action>):DispatchProps=> ({
-  handleDayClick: (id:string, dayIndex:number) => dispatch(clickDay(id, dayIndex))
+  handleDayClick: (id:string, dayIndex:string) => dispatch(clickDay(id, dayIndex))
 });
 
 

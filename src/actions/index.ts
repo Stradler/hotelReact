@@ -3,8 +3,8 @@ import {action, ActionType} from "typesafe-actions";
 
 
 export const clickDay = 
-    (id: string, dayIndex: number) => 
-        action(constants.CLICK_DAY, id, dayIndex);
+    (id: string, day: string) => 
+        action(constants.CLICK_DAY, id, day);
 
 
 export type Click_Action = ActionType<typeof clickDay>;

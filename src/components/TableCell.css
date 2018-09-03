@@ -1,0 +1,12 @@
+.TableCell {
+    width: 90px;
+    height: 50px;
+    margin-right: 10px;
+    text-align: center;
+    background-color: green;
+
+}
+
+.booked {
+    background-color: red;
+  }

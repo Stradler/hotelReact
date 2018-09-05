@@ -16,7 +16,7 @@ const TableCell: React.SFC<IDispatchBookedProps> = ({
         TableCell: true,
         booked: booked ? true : false
       })}
-      onClick={() => handleDayClick(id, day)}
+      onClick={handleDayClick.bind(null, id, day)}
     />
   );
 };

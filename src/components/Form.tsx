@@ -2,26 +2,28 @@ import * as React from "react";
 import { IFormProps } from "../containers/Form";
 import "./Form.css";
 
-const Form: React.SFC<IFormProps> = ({
+
+
+const Form = ({
   beginDate,
   endDate,
   count,
-  handleBeginChange,
-  handleEndChange,
-  handleSubmit
-}) => {
+  BeginChange,
+  EndChange,
+  Submit
+}: IFormProps) => {
   return (
     <form
-      onSubmit={e => {e.preventDefault(); handleSubmit(beginDate.id, beginDate.day, endDate.day)}}
+      onSubmit={Submit}
     >
       <p>{}</p>
       <input
-        onChange={e => handleBeginChange(e.target.value)}
+        onChange={BeginChange}
         type="text"
         value={beginDate.day}
       />
       <input
-        onChange={e => handleEndChange(e.target.value)}
+        onChange={EndChange}
         type="text"
         value={endDate.day}
       />

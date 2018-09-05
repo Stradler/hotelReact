@@ -1,10 +1,17 @@
-// import * as React from "react";
+import * as React from "react";
 import { connect } from "react-redux";
 import * as Redux from "redux";
 import { changeBegin, changeEnd, FormTypes, submitBooking } from "../actions";
 import Form from "../components/Form";
 // import { checkDates } from "../helpers/misc";
 import { IDate } from "../reducers/beginDate";
+
+export interface IFormProps extends IFormInputs {
+  count: number;
+  BeginChange(e: React.FormEvent<HTMLInputElement>): void;
+  EndChange(e: React.FormEvent<HTMLInputElement>): void;
+  Submit(e: React.FormEvent<HTMLFormElement>): void;
+}
 
 export interface IFormInputs {
   beginDate: IDate;
@@ -15,7 +22,7 @@ export interface IFormState {
   error: string;
 }
 
-export interface IFormProps extends IFormInputs {
+export interface IFormEnhancedProps extends IFormInputs {
   count: number;
   handleBeginChange: (day: string) => void;
   handleEndChange: (day: string) => void;
@@ -40,27 +47,48 @@ const mapStateToProps = ({ beginDate, endDate }: IFormInputs) => {
   };
 };
 
-// const formHOC = (FormComponent: React.ComponentType) =>
-//   class FormHOC extends React.Component<IFormProps> {
-//     public inputFromRef: React.RefObject<HTMLInputElement>;
-//     public inputToRef: React.RefObject<HTMLInputElement>;
+const formEnhance = <P extends IFormEnhancedProps>(
+  FormComponent: React.SFC<IFormProps>
+) =>
+  // сделать подсчет дней
+  //
+  class FormHoc extends React.Component<IFormEnhancedProps> {
+    public readonly state: IFormState = {
+      error: ""
+    };
+    constructor(props: IFormEnhancedProps) {
+      super(props);
+    }
 
-//     public readonly state: IFormState = {
-//       error: ""
-//     };
-//     constructor(props: IFormProps) {
-//       super(props);
-//       this.inputFromRef = React.createRef<HTMLInputElement>();
-//       this.inputToRef = React.createRef<HTMLInputElement>();
-//     }
+    public ehnahcedHandleBeginChange = (
+      e: React.FormEvent<HTMLInputElement>
+    ) => {
+      this.props.handleBeginChange(e.currentTarget.value);
+    };
+    public ehnahcedHandleEndChange = (e: React.FormEvent<HTMLInputElement>) => {
+      this.props.handleEndChange(e.currentTarget.value);
+    };
 
-//     render() {
-//       const { ...props } = this.props;
-//       return <FormComponent {...props} />;
-//     }
-//   };
+    public ehnahcedHandleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+      const { beginDate, endDate } = this.props;
+      e.preventDefault();
+      this.props.handleSubmit(beginDate.id, beginDate.day, endDate.day);
+    };
+
+    public render() {
+      const { beginDate, endDate, count } = this.props;
+      return (
+        <FormComponent beginDate={beginDate} endDate={endDate} count={count}
+                       BeginChange={this.ehnahcedHandleBeginChange}
+                       EndChange={this.ehnahcedHandleEndChange}
+                       Submit={this.ehnahcedHandleSubmit} />
+      );
+    }
+  };
+
+const FormHOC = formEnhance(Form);
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Form);
+)(FormHOC);

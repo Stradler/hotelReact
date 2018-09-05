@@ -1,5 +1,10 @@
 {
-  "extends": [],
+  "extends": [
+    "tslint:latest",
+    "tslint-react",
+    "tslint-config-prettier",
+    "tslint-eslint-rules"
+  ],
   "defaultSeverity": "warning",
   "linterOptions": {
     "exclude": [

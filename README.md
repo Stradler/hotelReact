@@ -18,7 +18,7 @@ These instructions will help you copy this project and run on your computer.
 
       ```console
       foo@bar:~$ git clone https://github.com/Stradler/hotelReact.git OptionalCustomName
-      foo@bar:~$ git cd hotelReact Or OptionalCustomName
+      foo@bar:~$ cd hotelReact Or OptionalCustomName
       ```
 
 2. In The Root Directory Install Required Packages and Typings:

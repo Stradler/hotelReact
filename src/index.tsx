@@ -1,12 +1,13 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import App from './containers/App';
-import './index.css';
-import registerServiceWorker from './registerServiceWorker';
-import reducer from "./reducers";
-import {createStore} from "redux";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { createStore } from "redux";
+// tslint:disable-next-line:no-implicit-dependencies
+import { composeWithDevTools } from "redux-devtools-extension";
+import App from "./containers/App";
+import "./index.css";
+import reducer from "./reducers";
+import registerServiceWorker from "./registerServiceWorker";
 
 export const store = createStore(reducer, composeWithDevTools());
 
@@ -14,28 +15,9 @@ ReactDOM.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 registerServiceWorker();
-
-console.log(store.getState());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*
@@ -78,4 +60,3 @@ console.log(store.getState());
 
   }
 */
-

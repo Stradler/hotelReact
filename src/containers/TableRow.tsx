@@ -1,17 +1,17 @@
-import TableRow from "../components/TableRow";
 import { connect } from "react-redux";
-import {Rooms} from "../helpers/generateRooms";
+import TableRow from "../components/TableRow";
+import { IRooms } from "../helpers/generateRooms";
 
-export interface RoomState {
-    bookedRooms: Rooms;
-    rooms: string[];
+export interface IRoomState {
+  bookedRooms: IRooms;
+  rooms: string[];
 }
 
-const mapStateToProps = ({bookedRooms, rooms}:RoomState):RoomState => {
-    return {
-        bookedRooms,
-        rooms
-    }
-}
+const mapStateToProps = ({ bookedRooms, rooms }: IRoomState): IRoomState => {
+  return {
+    bookedRooms,
+    rooms
+  };
+};
 
 export default connect(mapStateToProps)(TableRow);

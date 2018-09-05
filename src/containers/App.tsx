@@ -1,15 +1,14 @@
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import App from "../components/App";
 
-export interface AppProps {
-    addMode: boolean;
+export interface IAppProps {
+  addMode: boolean;
 }
 
-const mapStateToProps = ({addMode}: AppProps) => {
-    return {
-        addMode
-    }
-}
-
+const mapStateToProps = ({ addMode }: IAppProps) => {
+  return {
+    addMode
+  };
+};
 
 export default connect(mapStateToProps)(App);

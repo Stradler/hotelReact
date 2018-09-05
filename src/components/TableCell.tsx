@@ -1,19 +1,24 @@
-import * as React from "react";
-import "./TableCell.css";
-// import {BookedDayProp} from "../helpers/generateRooms";
 import classNames from "classnames";
-import {DispatchBookedProps} from "../containers/TableCell";
+import * as React from "react";
+import { IDispatchBookedProps } from "../containers/TableCell";
+import "./TableCell.css";
 
 
-const TableCell:React.SFC<DispatchBookedProps> = ({id, day, booked, handleDayClick}) => {
-    return(
-        <td className = {classNames({
-            TableCell: true, 
-            booked: booked ? true : false
-        })} onClick={() => handleDayClick(id, day)}>
-
-        </td>
-    )
-}
+const TableCell: React.SFC<IDispatchBookedProps> = ({
+  id,
+  day,
+  booked,
+  handleDayClick
+}) => {
+  return (
+    <td
+      className={classNames({
+        TableCell: true,
+        booked: booked ? true : false
+      })}
+      onClick={() => handleDayClick(id, day)}
+    />
+  );
+};
 
 export default TableCell;

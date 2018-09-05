@@ -2,8 +2,6 @@ import * as React from "react";
 import { IFormProps } from "../containers/Form";
 import "./Form.css";
 
-
-
 const Form = ({
   beginDate,
   endDate,
@@ -13,28 +11,17 @@ const Form = ({
   Submit
 }: IFormProps) => {
   return (
-    <form
-      onSubmit={Submit}
-    >
+    <form onSubmit={Submit}>
       <p>{}</p>
-      <input
-        onChange={BeginChange}
-        type="text"
-        value={beginDate.day}
-      />
-      <input
-        onChange={EndChange}
-        type="text"
-        value={endDate.day}
-      />
+      <input onChange={BeginChange} type="text" value={beginDate.day} />
+      <input onChange={EndChange} type="text" value={endDate.day} />
       <p>(пока не сделано)Дней: {count}</p>
       <button>Забронировать</button>
     </form>
   );
-}
+};
 
 export default Form;
-
 
 // e => {
 //   e.preventDefault();

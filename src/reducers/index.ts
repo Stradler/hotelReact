@@ -1,16 +1,16 @@
-import {combineReducers} from "redux";
-import {week} from "./week";
-import {bookedRooms} from "./bookedRooms";
-import {rooms} from "./roomsId";
-import {addMode} from "./addMode";
-import {beginDate} from "./beginDate";
-import {endDate} from "./endDate";
+import { combineReducers } from "redux";
+import { addMode } from "./addMode";
+import { beginDate } from "./beginDate";
+import { bookedRooms } from "./bookedRooms";
+import { endDate } from "./endDate";
+import { rooms } from "./roomsId";
+import { week } from "./week";
 
 export default combineReducers({
-    week,
-    bookedRooms,
-    rooms,
-    addMode,
-    beginDate,
-    endDate
+  addMode,
+  beginDate,
+  bookedRooms,
+  endDate,
+  rooms,
+  week,
 });

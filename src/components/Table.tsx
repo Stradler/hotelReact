@@ -1,14 +1,15 @@
 import * as React from "react";
-import { TableProps } from "../containers/Table";
-import "./Table.css";
 import TableRow from "../components/TableRow";
-export interface DateName {
+import { ITableProps } from "../containers/Table";
+import "./Table.css";
+
+export interface IDateName {
   name: string;
 }
 
-export const TableTh: React.SFC<DateName> = ({ name }) => <th>{name}</th>;
+export const TableTh: React.SFC<IDateName> = ({ name }) => <th>{name}</th>;
 
-const Table: React.SFC<TableProps> = ({ week, rooms, bookedRooms }) => {
+const Table: React.SFC<ITableProps> = ({ week, rooms, bookedRooms }) => {
   return (
     <table>
       <caption className="table-caption">

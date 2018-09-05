@@ -78,10 +78,14 @@ const formEnhance = <P extends IFormEnhancedProps>(
     public render() {
       const { beginDate, endDate, count } = this.props;
       return (
-        <FormComponent beginDate={beginDate} endDate={endDate} count={count}
-                       BeginChange={this.ehnahcedHandleBeginChange}
-                       EndChange={this.ehnahcedHandleEndChange}
-                       Submit={this.ehnahcedHandleSubmit} />
+        <FormComponent
+          beginDate={beginDate}
+          endDate={endDate}
+          count={count}
+          BeginChange={this.ehnahcedHandleBeginChange}
+          EndChange={this.ehnahcedHandleEndChange}
+          Submit={this.ehnahcedHandleSubmit}
+        />
       );
     }
   };

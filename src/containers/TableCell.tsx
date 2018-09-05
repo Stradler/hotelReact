@@ -1,10 +1,10 @@
 import {connect} from "react-redux";
-import TableCell from "../components/TableCell";
-import {clickDay, Click_Action} from "../actions";
 import * as Redux from 'redux'
+import {Click_Action, clickDay } from "../actions";
+import TableCell from "../components/TableCell";
 
 
-export interface DispatchBookedProps {
+export interface IDispatchBookedProps {
   booked: boolean;
   handleDayClick: (id: string, dayIndex: string) => void;
   id: string;

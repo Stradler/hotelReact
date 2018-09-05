@@ -1,26 +1,23 @@
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import Table from "../components/Table";
-import {Rooms} from "../helpers/generateRooms";
+import { IRooms } from "../helpers/generateRooms";
 
-export interface TableProps {
-    week: string[];
-    rooms: string[];
-    bookedRooms: Rooms;
+export interface ITableProps {
+  week: string[];
+  rooms: string[];
+  bookedRooms: IRooms;
 }
 
-export interface DispatchProps {
+export interface IDispatchProps {
   handleDayClick: (id: string, dayIndex: string) => void;
 }
 
-
-
-const mapStateToProps = ({week, rooms, bookedRooms}: TableProps) => {
-    return {
-      week,
-      rooms,
-      bookedRooms
-    }
-  } 
-
+const mapStateToProps = ({ week, rooms, bookedRooms }: ITableProps) => {
+  return {
+    bookedRooms,
+    rooms,
+    week,
+  };
+};
 
 export default connect(mapStateToProps)(Table);

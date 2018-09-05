@@ -1,6 +1,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import * as Redux from "redux";
+import {Subtract} from "utility-types";
 import { changeBegin, changeEnd, FormTypes, submitBooking } from "../actions";
 import Form from "../components/Form";
 // import { checkDates } from "../helpers/misc";
@@ -22,7 +23,7 @@ export interface IFormState {
   error: string;
 }
 
-export interface IFormEnhancedProps extends IFormInputs {
+export interface IFormInjectedProps extends IFormInputs {
   count: number;
   handleBeginChange: (day: string) => void;
   handleEndChange: (day: string) => void;
@@ -47,18 +48,11 @@ const mapStateToProps = ({ beginDate, endDate }: IFormInputs) => {
   };
 };
 
-const formEnhance = <P extends IFormEnhancedProps>(
-  FormComponent: React.SFC<IFormProps>
-) =>
-  // сделать подсчет дней
-  //
-  class FormHoc extends React.Component<IFormEnhancedProps> {
+const formInject = <P extends IFormProps>(FormComponent: React.ComponentType<P>) =>
+  class FormInject extends React.Component<Subtract<P, IFormProps> & IFormInjectedProps, IFormState> {
     public readonly state: IFormState = {
       error: ""
     };
-    constructor(props: IFormEnhancedProps) {
-      super(props);
-    }
 
     public ehnahcedHandleBeginChange = (
       e: React.FormEvent<HTMLInputElement>
@@ -90,7 +84,7 @@ const formEnhance = <P extends IFormEnhancedProps>(
     }
   };
 
-const FormHOC = formEnhance(Form);
+const FormHOC = formInject(Form);
 
 export default connect(
   mapStateToProps,

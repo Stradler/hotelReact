@@ -23,7 +23,8 @@
     "ts-node": "^7.0.1",
     "tslint-config-prettier": "^1.15.0",
     "tslint-react": "^3.6.0",
-    "typesafe-actions": "^2.0.4"
+    "typesafe-actions": "^2.0.4",
+    "utility-types": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts-ts start",

@@ -1,8 +1,7 @@
-import {connect} from "react-redux";
-import * as Redux from 'redux'
-import {Click_Action, clickDay } from "../actions";
+import { connect } from "react-redux";
+import * as Redux from "redux";
+import { Click_Action, clickDay } from "../actions";
 import TableCell from "../components/TableCell";
-
 
 export interface IDispatchBookedProps {
   booked: boolean;
@@ -11,12 +10,13 @@ export interface IDispatchBookedProps {
   day: string;
 }
 
-
-
-
 const mapDispatchToProps = (dispatch: Redux.Dispatch<Click_Action>) => ({
-  handleDayClick: (id:string, dayIndex:string) => dispatch(clickDay(id, dayIndex))
+  handleDayClick: (id: string, dayIndex: string) =>
+    dispatch(clickDay(id, dayIndex))
 });
 
 
-export default connect(null, mapDispatchToProps)(TableCell);
+export default connect(
+  null,
+  mapDispatchToProps
+)(TableCell);

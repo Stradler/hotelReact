@@ -16,7 +16,7 @@ const mapStateToProps = ({ week, rooms, bookedRooms }: ITableProps) => {
   return {
     bookedRooms,
     rooms,
-    week,
+    week
   };
 };
 

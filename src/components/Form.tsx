@@ -1,14 +1,14 @@
 import * as React from "react";
-import "./Form.css";
-import { FormProps } from "../containers/Form";
+import { IFormProps } from "../containers/Form";
 import { checkDates } from "../helpers/misc";
+import "./Form.css";
 
-export interface FormState {
+export interface IFormState {
   error: string;
 }
 
-class Form extends React.Component<FormProps, FormState> {
-  readonly state: FormState = {
+class Form extends React.Component<IFormProps, IFormState> {
+  public readonly state: IFormState = {
     error: ""
   };
 
@@ -16,7 +16,7 @@ class Form extends React.Component<FormProps, FormState> {
     const {
       beginDate,
       endDate,
-      number,
+      count,
       handleBeginChange,
       handleEndChange,
       handleSubmit
@@ -50,7 +50,7 @@ class Form extends React.Component<FormProps, FormState> {
           type="text"
           value={endDate.day}
         />
-        <p>(пока не сделано)Дней: {number}</p>
+        <p>(пока не сделано)Дней: {count}</p>
         <button>Забронировать</button>
       </form>
     );

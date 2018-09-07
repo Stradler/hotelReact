@@ -1,19 +1,24 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom";
+import ReactDOM from "react-dom";
+import Loadable from "react-loadable";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 // tslint:disable-next-line:no-implicit-dependencies
 import { composeWithDevTools } from "redux-devtools-extension";
-import App from "./containers/App";
+// import App from "./containers/App";
 import "./index.css";
 import reducer from "./reducers";
 import registerServiceWorker from "./registerServiceWorker";
 
 export const store = createStore(reducer, composeWithDevTools());
+const AppComponent = Loadable({
+  loader: () => import("./containers/App"),
+  loading: () => <div>Loading...</div>
+});
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <AppComponent />
   </Provider>,
   document.getElementById("root") as HTMLElement
 );
